@@ -13,7 +13,7 @@ To make the API work please make sure you have generate `models` directory using
 ## Install
 ```
 
-npm install crud_api_generator
+npm install -g crud_api_generator
 
 ```
 
