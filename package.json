@@ -1,0 +1,29 @@
+{
+  "name": "api_generator",
+  "version": "1.0.0",
+  "description": "Generate CRUD api for your express.js project",
+  "keywords": [
+    "api",
+    "crud",
+    "generator"
+  ],
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "apiGenerator": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sambatlim/api_generator.git"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "mysql2": "^3.6.1",
+    "yargs": "^16.1.1"
+  },
+  "author": "Sambat Lim <sambatlim86@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
