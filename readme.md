@@ -119,7 +119,7 @@ router.get('/api/get/[table name]/:id',(req,res)=>{
 
 router.patch('/api/update/[table name]/:id',(req,res)=>{
     let dataToProcess = new Object();
-   if(req.body.[column_name]) dataToProcess['[column_name]'] = req.body.[column_name];
+   if(typeof(req.body.[column_name]) !== 'undefined') dataToProcess['[column_name]'] = req.body.[column_name];
 
     model.[table name].update({
         dataToProcess,

@@ -189,7 +189,7 @@ function generateImportRouter(table){
 function generateDataColumn(column){
     let dataToExport = `let dataToProcess = new Object();\n`
     column.forEach(columnName => {
-        dataToExport += `   if(req.body.${columnName}) dataToProcess['${columnName}'] = req.body.${columnName};\n`
+        dataToExport += `   if(typeof(req.body.${columnName}) !== 'undefined') dataToProcess['${columnName}'] = req.body.${columnName};\n`
     });
     return dataToExport
 }
