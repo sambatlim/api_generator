@@ -1,6 +1,6 @@
 {
   "name": "crud_api_generator",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Generate CRUD api for your express.js project",
   "keywords": [
     "api",

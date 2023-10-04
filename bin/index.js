@@ -51,14 +51,14 @@ async function main() {
 
         let allTable = [];
         mysqlConnection = await mysql.createConnection(databaseConnectionProperties);
-        const [allTables, fields] = await mysqlConnection.execute(`select table_name from information_schema.tables where table_schema = '${database}'`)
+        const [allTables, fields] = await mysqlConnection.execute(`select table_name from information_schema.tables where table_schema = ?`,[database])
         allTables.forEach(eachTable => {
             allTable.push(eachTable[0])
         })
         let countFinishTable = 0;
         allTable.forEach(async tableName => {
             let allColumn = [];
-            const [columnFromQuery, fields] = await mysqlConnection.execute(`select distinct(COLUMN_NAME) FROM information_schema.columns where TABLE_NAME = '${tableName}'`)
+            const [columnFromQuery, fields] = await mysqlConnection.execute("SHOW COLUMNS FROM `"+tableName+"`")
             columnFromQuery.forEach(eachColumn => {
                 if (eachColumn[0] !== 'id') {
                     allColumn.push(eachColumn[0]);
@@ -109,8 +109,8 @@ async function main() {
     }
 
 }
-const a = main();
-return a;
+const mainExecution = main();
+return mainExecution;
 
 
 
